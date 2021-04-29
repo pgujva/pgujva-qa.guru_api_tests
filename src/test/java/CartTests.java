@@ -23,6 +23,7 @@ public class CartTests extends Testbase {
                     .log().body()
                     .body("success", is(true))
                     .extract().response();
+
     System.out.println(response);
   }
 }
