@@ -1,3 +1,4 @@
+import api.Auth;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.conditions.Text;
 import io.restassured.response.Response;
@@ -28,7 +29,7 @@ public class LoginTests extends Testbase {
 
   @Test
   void loginWithCookieTest() {
-    Map<String, String> cookiesMap =
+    Map<String, String> cookiesMap = new Auth().login("pasha@test.ru","pasha@test.ru1");
             given()
                     .contentType("application/x-www-form-urlencoded")
                     .formParam("Email", "pasha@test.ru")
